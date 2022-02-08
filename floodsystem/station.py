@@ -40,21 +40,23 @@ class MonitoringStation:
         return d
 
     #Exercise 1F:
-    '''Method to check for inconsistencies in typical high/low date.'''
+    
     def typical_range_consistent(self):
-        if self.typical_range = None:
+        """Method to check for inconsistencies in typical high/low data."""
+        if self.typical_range == None:
             return False
-        if self.typicalRangeHigh<self.typicalRangeLow:
+        elif self.typical_range[0]>self.typical_range[1]:
             return False
         else:
             return True
 
 #Exercise 1F:
-'''A function which returns a list of stations that have inconsistent data (for typical range) from a given list of stations.'''
+
 def inconsistent_typical_range_stations(stations):
+    """A function which returns a list of stations that have inconsistent data (for typical range) from a given list of stations."""
     inconsistency_list = []
     for check in stations:
-        inconsistency_check = check.typical_range_consistent()
+        inconsistency_check = check.typical_range_consistent
         if inconsistency_check == False:
             inconsistency_list.append(check.name)
         inconsistency_list.sort()

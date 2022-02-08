@@ -5,8 +5,29 @@
 geographical data.
 
 """
-
+from haversine import haversine, Unit
 from .utils import sorted_by_key  
+from turtle import distance
+
+#Exercise 1B
+def stations_by_distance(stations, p):
+    stat_distances = []
+    for station in stations:
+        distance = haversine(p, station.coord)
+        stat_distances.append((station,distance))
+    return sorted_by_key(stat_distances, 1)
+
+
+#Exercise 1C
+def stations_within_radius(stations, centre, r):
+    radius = stations_by_distance(stations, centre)
+    within_radius = []
+    for i in radius:
+        if i[1] <= r:
+            within_radius.append(i[0])
+    return within_radius
+
+  
 #Exercise 1
 ''' creates a set containing the names of all the rivers with stations'''
 def river_with_stations(stations):

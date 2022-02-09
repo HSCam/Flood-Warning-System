@@ -11,7 +11,7 @@ def run():
     #iterates through stations and appends all items to station_within_10
     for station in within_10:
         stations_within_10.append(station)
-    print(sorted(stations_within_10))
+    print(sorted(stations_within_10, key=lambda x: x.name))
 
 if __name__ == "__main__":
     print("***Task 1C: CUED Part IA FLood Warning System***")

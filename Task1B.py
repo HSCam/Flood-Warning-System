@@ -17,5 +17,5 @@ def run():
     print("The 10 furthest stations are:", furthest)
 
 if __name__ == "__main__":
-    print("***Task 1B: CUED Part IA FLood Warning system")
+    print("***Task 1B: CUED Part IA FLood Warning system***")
     run()

@@ -29,5 +29,5 @@ def run():
 
 
 if __name__ == "__main__":
-    print("***Task 1D: CUED Part IA FLood Warning System")
+    print("***Task 1D: CUED Part IA FLood Warning System***")
     run()

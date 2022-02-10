@@ -6,7 +6,8 @@ geographical data.
 
 """
 
-from .utils import sorted_by_key  
+from .utils import sorted_by_key
+from operator import itemgetter 
 #Exercise 1
 ''' creates a set containing the names of all the rivers with stations'''
 def river_with_stations(stations):
@@ -41,7 +42,9 @@ def rivers_by_station_number(stations, N):
     rivers_with_station_number.sort(key=lambda x: x[1], reverse=True)  # sorts tuples in list by second value (number of stations), then flips within tuples to have river name first
     #print(rivers_with_station_number)
     output_list = rivers_with_station_number[:N]  # Outputs the first N terms in the sorted list
+    #print(output_list)
     for check in rivers_with_station_number:  # adds on rivers which have the same number of stations as the Nth river
-        if check[1] == output_list[-1]:
-            output_list.append[check]
+        number_of_stations = list(map(itemgetter(1), output_list))  # creates a list of the number of stations (excluded river names) in order
+        if check[1] == number_of_stations[-1]:
+            output_list.append(check)
     return(output_list)

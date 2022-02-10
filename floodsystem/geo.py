@@ -9,6 +9,37 @@ geographical data.
 from .utils import sorted_by_key
 from operator import itemgetter 
 #Exercise 1
+from haversine import haversine, Unit
+from .utils import sorted_by_key  
+from turtle import distance
+
+
+#Exercise 1B
+def stations_by_distance(stations, p):
+    stat_distances = []
+    #iterates through stations and calculates the distance from p
+    for station in stations:
+        #Calculated distance using the haversine formula
+        distance = haversine(p, station.coord)
+        #adds the (station, distance) tuple to the list
+        stat_distances.append((station,distance))
+    #returns sorted list
+    return sorted_by_key(stat_distances, 1)
+
+
+#Exercise 1C
+def stations_within_radius(stations, centre, r):
+    #uses previous function to calculate distance from centre
+    radius = stations_by_distance(stations, centre)
+    within_radius = []
+    for i in radius:
+        #iterates through items in radius and if the distance is less than r it appends the station name onto the list
+        if i[1] <= r:
+            within_radius.append(i[0])
+    return within_radius
+
+  
+#Exercise 1D
 ''' creates a set containing the names of all the rivers with stations'''
 def river_with_stations(stations):
     station_rivers = set([])  #using a 'set' object for this function as it only allows unique entries. This means the data doesn't need to be manually filtered to prevent duplicates.

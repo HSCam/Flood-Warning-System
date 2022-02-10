@@ -56,8 +56,8 @@ def inconsistent_typical_range_stations(stations):
     """A function which returns a list of stations that have inconsistent data (for typical range) from a given list of stations."""
     inconsistency_list = []
     for check in stations:
-        inconsistency_check = check.typical_range_consistent
+        inconsistency_check = check.typical_range_consistent()
         if inconsistency_check == False:
             inconsistency_list.append(check.name)
-        inconsistency_list.sort()
-        return inconsistency_list
+    inconsistency_list.sort()
+    return inconsistency_list

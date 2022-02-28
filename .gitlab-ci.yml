@@ -20,3 +20,5 @@ test:
   - python Task2D.py
   - python test_TaskB.py
   - python test_TaskC.py
+  - python test2B.py
+  - python test2C.py

@@ -106,7 +106,7 @@ def fetch_latest_water_level_data(use_cache=False):
 
     return data
 
-
+# Exercise 2D
 def fetch_measure_levels(measure_id, dt):
     """Fetch measure levels from latest reading and going back a period
     dt. Return list of dates and a list of values.

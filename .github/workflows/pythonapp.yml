@@ -51,6 +51,3 @@ jobs:
           python Task2B.py
           python Task2C.py
           python Task2D.py
-          python test2B.py
-          python test2C.py
-

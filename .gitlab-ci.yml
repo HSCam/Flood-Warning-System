@@ -13,12 +13,8 @@ test:
   - python -m pytest -v .
 
   # Run deliverables. Add your deliverables to the test system here.
-  - python Task1A.py
-  - python Task1B.py
-  - python Task1C.py
+
   - python Task2A.py
   - python Task2D.py
-  - python test_TaskB.py
-  - python test_TaskC.py
   - python test2B.py
   - python test2C.py
